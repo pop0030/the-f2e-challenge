@@ -39,12 +39,21 @@ const TABS = [
   }
 ];
 
-const Todolist = () => {
+const Todolist = ({ state, action }) => {
+  const activeTab = state.tab;
   return (
     <div>
       <TabContainer>
         {TABS.map(tab => (
-          <TabItem key={tab.key} active={tab.key === 'task'}>{tab.name}</TabItem>
+          <TabItem
+            key={tab.key}
+            active={tab.key === activeTab}
+            onClick={event => {
+              action.toggleTab(tab.key)
+            }}
+          >
+            {tab.name}
+          </TabItem>
         ))}
       </TabContainer>
     </div>
