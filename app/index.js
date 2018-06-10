@@ -10,6 +10,7 @@ import reducer from './reducer';
 
 import 'reset-css';
 import 'app/style/global.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const store = createStore(reducer, applyMiddleware(logger));
 
