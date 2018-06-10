@@ -1,63 +1,89 @@
 import React from 'react';
 import styled from 'styled-components';
+import _size from 'lodash/size';
+import { MEDIUM_GRAY, NOMARL_GRAY } from './config';
 
-/** color config */
-import { BLUE, WHITE, MAZARINE } from './config';
+import Tab from './Tab';
+import AddButton from './AddButton';
+import TodoItem from './TodoItem';
 
-const TabContainer = styled.div`
-  background-color: ${BLUE};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const TabItem = styled.div`
-  cursor: pointer;
-  font-family: ${({ active }) => active ? 'Roboto-Medium' : 'Roboto-Regular'};
-  color: ${({ active }) => active ? WHITE : MAZARINE};
-  border-bottom: 5px solid;
-  border-bottom-color: ${({ active }) => active ? MAZARINE : BLUE};
-  font-size: 24px;
-  width: 220px;
-  height: 76px;
-  line-height: 76px;
-  text-align: center;
-`;
-
-const TABS = [
-  {
-    name: 'My Tasks',
-    key: 'task'
-  },
-  {
-    name: 'In Progress',
-    key: 'progress'
-  },
-  {
-    name: 'Completed',
-    key: 'completed'
+const renderList = (list, type) => list.filter(item => {
+  if (type === 'progress') {
+    return !item.isCompleted;
   }
-];
+  if (type === 'completed') {
+    return item.isCompleted;
+  }
+  return true;
+})
 
 const Todolist = ({ state, action }) => {
-  const activeTab = state.tab;
+  const { tab, list, isOpenAdd, activeItem } = state;
+  const { toggleTab, toggleAdd, addItem, editItem, toggleEdit, toggleCompleted, toggleRemarkable } = action;
+  const filterList = renderList(list, tab);
   return (
-    <div>
-      <TabContainer>
-        {TABS.map(tab => (
-          <TabItem
-            key={tab.key}
-            active={tab.key === activeTab}
-            onClick={event => {
-              action.toggleTab(tab.key)
-            }}
-          >
-            {tab.name}
-          </TabItem>
+    <TodoListCaontainer>
+      <Tab
+        activeTab={tab}
+        toggleTab={toggleTab}
+      />
+      <StyledListWrapper>
+        <AddButton
+          addItem={addItem}
+          isOpenAdd={isOpenAdd}
+          toggleAdd={toggleAdd}
+          toggleComplete={toggleCompleted}
+          toggleRemarkable={toggleRemarkable}
+        />
+        {filterList.map(item => (
+          <TodoItem
+            item={item}
+            key={item.uid}
+            active={activeItem === item.uid}
+            editItem={editItem}
+            toggleEdit={toggleEdit}
+            toggleCompleted={toggleCompleted}
+            toggleRemarkable={toggleRemarkable}
+          />
         ))}
-      </TabContainer>
-    </div>
+        {(tab === 'task' || tab === 'progress') &&
+        <Info>{`${_size(filterList)} task(s) left`}</Info>
+        }
+        {(tab === 'completed') &&
+        <Info>{`${_size(filterList)} task(s) completed`}</Info>
+        }
+      </StyledListWrapper>
+    </TodoListCaontainer>
   );
 };
 
 export default Todolist;
+
+const TodoListCaontainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: ${MEDIUM_GRAY};
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+const StyledListWrapper = styled.div`
+  flex: 1 1 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  > div {
+    flex: 0 0 auto;
+  }
+`;
+
+const Info = styled.div`
+  width: 625px;
+  padding: 0 32px;
+  font-size: 24px;
+  color: ${NOMARL_GRAY};
+  font-style: italic;
+`;

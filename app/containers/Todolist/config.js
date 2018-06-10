@@ -8,4 +8,5 @@ export const LIGHT_GRAY = '#F2F2F2';
 export const MEDIUM_GRAY = '#E1E1E1';
 export const NOMARL_GRAY = '#C8C8C8';
 export const DARK_GRAY = '#757575';
+export const BLACK = '#000000';
 
