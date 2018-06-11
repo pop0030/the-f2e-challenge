@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route, Redirect, Switch } from 'react-router'
 
 import Todolist from 'app/containers/Todolist';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Todolist />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Switch>
+      <Route exact path="/" render={() => <Redirect to="/todolist" />} />
+      <Route path="/todolist" component={Todolist} />
+    </Switch>
+  </div>
+);
 
 export default App;
