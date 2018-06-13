@@ -1,3 +1,4 @@
 import { createAction } from 'redux-actions';
+import { FETCH_DATA_REQUEST } from './constant';
 
-export const foo = createAction('bar', () => {});
+export const fetchData = createAction(FETCH_DATA_REQUEST, payload => payload);
