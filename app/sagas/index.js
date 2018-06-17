@@ -14,7 +14,7 @@ const handleQuery = ({ location, category, search }) => {
   console.log(location, loc);
   const cat = category.map(value => CAT_OPTIONS.find(opt => value === opt.value).label);
   const isAllLocation = location === '000';
-  return [isAllLocation ? '' : loc.label.substr(0, 2), ...cat, search].join(' ').trim();
+  return [isAllLocation ? '' : loc.label, ...cat, search].join(' ').trim();
 };
 
 function* watchFetchData() {

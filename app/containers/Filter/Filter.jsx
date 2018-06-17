@@ -7,12 +7,6 @@ import Panel from './components/Panel';
 import Loader from './components/Loader';
 import { LIGHT_GRAY } from './config';
 
-const handleFiles = (fileText) => {
-  const spliter = 'http://';
-  const result = fileText.split(spliter).slice(1).map(file => `${spliter}${file}`);
-  return result;
-}
-
 class Filter extends Component {
   componentDidMount() {
     this.props.action.fetchData({
@@ -33,14 +27,14 @@ class Filter extends Component {
           <RightRow>
             {isFetch ? <Loader style={{ marginTop: '200px' }}/> : records.map(record => (
               <Card
-                key={record._id}
-                title={record.stitle}
-                desc={record.xbody}
-                cover={handleFiles(record.file)[0]}
+                key={record.Id}
+                title={record.Name}
+                desc={record.Description}
+                cover={record.Picture1}
                 source={record.idpt}
-                category={record.CAT2}
-                address={record.address}
-                postDate={record.xpostDate}
+                category={record.Ticketinfo}
+                address={record.Zone}
+                postDate={record.Tel}
               />
             ))}
           </RightRow>

@@ -19,8 +19,8 @@ const Card = ({
       <Title>{title}</Title>
       <Description>{desc}</Description>
       <Row>
-        <Source>{source}</Source>
-        <Category>{category}</Category>
+        {source && <Source>{source}</Source>}
+        {category && <Category>{category}</Category>}
       </Row>
       <Row style={{ marginBottom: 0 }}>
         <IconTag
@@ -28,8 +28,8 @@ const Card = ({
           onClick={() => {
             window.open(`https://www.google.com/maps/search/?api=1&query=${title}`)
           }}
-        >{address.substr(5,3)}</IconTag>
-        <IconTag iconName="calendar">{postDate}</IconTag>
+        >{address}</IconTag>
+        <IconTag iconName="phone">{postDate}</IconTag>
       </Row>
     </Content>
   </Container>

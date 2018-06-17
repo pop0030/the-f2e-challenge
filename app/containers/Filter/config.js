@@ -9,59 +9,46 @@ export const DARK_GRAY = '#9B9B9B';
 export const BLACK = '#000000';
 
 export const TPE_LOCATION = [
-  {
-    value: '000',
-    label: '全區'
-  },
-  {
-    value: '100',
-    label: '中正區'
-  },
-  {
-    value: '103',
-    label: '大同區'
-  },
-  {
-    value: '104',
-    label: '中山區'
-  },
-  {
-    value: '105',
-    label: '松山區'
-  },
-  {
-    value: '106',
-    label: '大安區'
-  },
-  {
-    value: '108',
-    label: '萬華區'
-  },
-  {
-    value: '110',
-    label: '信義區'
-  },
-  {
-    value: '111',
-    label: '士林區'
-  },
-  {
-    value: '112',
-    label: '北投區'
-  },
-  {
-    value: '114',
-    label: '內湖區'
-  },
-  {
-    value: '115',
-    label: '南港區'
-  },
-  {
-    value: '116',
-    label: '文山區'
-  }
-];
+  { value: '000', label: '全區' },
+  { value: '811', label: '楠梓區' },
+  { value: '813', label: '左營區' },
+  { value: '804', label: '鼓山區' },
+  { value: '807', label: '三民區' },
+  { value: '803', label: '鹽埕區' },
+  { value: '801', label: '前金區' },
+  { value: '800', label: '新興區' },
+  { value: '802', label: '苓雅區' },
+  { value: '806', label: '前鎮區' },
+  { value: '805', label: '旗津區' },
+  { value: '812', label: '小港區' },
+  { value: '830', label: '鳳山區' },
+  { value: '831', label: '大寮區' },
+  { value: '833', label: '鳥松區' },
+  { value: '832', label: '林園區' },
+  { value: '814', label: '仁武區' },
+  { value: '840', label: '大樹區' },
+  { value: '815', label: '大社區' },
+  { value: '820', label: '岡山區' },
+  { value: '821', label: '路竹區' },
+  { value: '825', label: '橋頭區' },
+  { value: '826', label: '梓官區' },
+  { value: '827', label: '彌陀區' },
+  { value: '828', label: '永安區' },
+  { value: '824', label: '燕巢區' },
+  { value: '823', label: '田寮區' },
+  { value: '822', label: '阿蓮區' },
+  { value: '852', label: '茄萣區' },
+  { value: '829', label: '湖內區' },
+  { value: '842', label: '旗山區' },
+  { value: '843', label: '美濃區' },
+  { value: '845', label: '內門區' },
+  { value: '846', label: '杉林區' },
+  { value: '847', label: '甲仙區' },
+  { value: '844', label: '六龜區' },
+  { value: '851', label: '茂林區' },
+  { value: '848', label: '桃源區' },
+  { value: '849', label: '那瑪夏區' }
+]
 
 export const CAT_OPTIONS = [
   {
