@@ -3,6 +3,7 @@ import { Route, Redirect, Switch } from 'react-router'
 
 import Todolist from 'app/containers/Todolist';
 import Filter from 'app/containers/Filter';
+import AdminOrder from 'app/containers/AdminOrder';
 
 const App = () => (
   <div>
@@ -10,6 +11,7 @@ const App = () => (
       <Route exact path="/" render={() => <Redirect to="/todolist" />} />
       <Route path="/todolist" component={Todolist} />
       <Route path="/filter" component={Filter} />
+      <Route path="/admin-order" component={AdminOrder} />
     </Switch>
   </div>
 );
