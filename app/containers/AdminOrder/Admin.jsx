@@ -16,7 +16,7 @@ class Admin extends React.Component {
     return (
       <Container>
         <Navigation tab={tab} onTabClick={this.handles.onTabClick} />
-        {(tab === 'home') && <Home />}
+        {(tab === 'home') && <Home {...this.props} />}
         {(tab === 'orders') && <Orders />}
         {(tab === 'product') && <Product />}
       </Container>
