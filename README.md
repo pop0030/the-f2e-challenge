@@ -20,6 +20,6 @@ This is a challenge project from [hexschool](https://github.com/hexschool/TheF2E
   * [Visual Spec](https://hexschool.github.io/THE_F2E_Design/week2-filter/)
 
 * **Week 3:** AdminOrder
-  * [Demo]
+  * [Demo](https://pop0030.github.io/the-f2e-challenge/#/admin-order)
   * [Post](https://www.facebook.com/groups/173311386703334/permalink/184948512206288/)
   * [Visual Spec](https://hexschool.github.io/THE_F2E_Design/week3-admin%20order/)
