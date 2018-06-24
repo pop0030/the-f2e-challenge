@@ -4,6 +4,8 @@ import _get from 'lodash/get';
 import Icon from 'react-fontawesome';
 
 import Counter from './Counter';
+import ActivityChart from './ActivityChart';
+import TransactionSite from './TransactionSite';
 
 class HOME extends React.Component {
   render() {
@@ -18,31 +20,38 @@ class HOME extends React.Component {
         <Row>
           <Col>
             <Counter
-              green
               count={revenueTotalCount}
-              label={<span><Icon name="rocket" />TOTAL REVENUE</span>}
+              countColor="#7ED321"
+              label="TOTAL REVENUE"
+              labelIcon={<Icon name="rocket" />}
             />
           </Col>
           <Col>
             <Counter
-              red
               count={costTotalCount}
-              label={<span><Icon name="cubes" />TOTAL COST</span>}
+              countColor="#D0021B"
+              label="TOTAL COST"
+              labelIcon={<Icon name="cubes" />}
             />
           </Col>
           <Col>
             <Counter
-              blue
               count={incomeTotalCount}
-              label={<span><Icon name="money" />NET INCOME</span>}
+              countColor="#4A90E2"
+              label="NET INCOME"
+              labelIcon={<Icon name="money" />}
             />
           </Col>
         </Row>
         <Row>
-          <Col>Activity</Col>
+          <Col>
+            <ActivityChart />
+          </Col>
         </Row>
         <Row>
-          <Col>Transaction Website</Col>
+          <Col>
+            <TransactionSite />
+          </Col>
           <Col>Latest Orders</Col>
         </Row>
       </Container>
@@ -56,7 +65,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px;
-`;
+  background-color: #F2F2F2;
+  `;
 
 const Row = styled.div`
   display: flex;

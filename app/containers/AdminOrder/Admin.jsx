@@ -30,4 +30,5 @@ const Container = styled.div`
   background-color: #F2F2F2;
   height: 100vh;
   padding-top: 70px;
+  font-family: 'Helvetica', sans-serif;
 `;

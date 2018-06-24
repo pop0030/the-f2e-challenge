@@ -7,3 +7,9 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.c3-tooltip-container > span {
+  padding: 4px 8px;
+  color: #FFFFFF;
+  border-radius: 2px;
+}
