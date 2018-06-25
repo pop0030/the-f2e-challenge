@@ -8,10 +8,8 @@ This is a challenge project from [hexschool](https://github.com/hexschool/TheF2E
 ## Content
 
 * **Week 1:** TodoList
-
-  * [Demo](https://pop0030.github.io/the-f2e-challenge/#/todolist)
-  * [Post](https://www.facebook.com/groups/173311386703334/permalink/179453469422459/)
-  * [Visual Spec](https://hexschool.github.io/THE_F2E_Design/todolist/)
+  |[Demo](https://pop0030.github.io/the-f2e-challenge/#/todolist)|[Post](https://www.facebook.com/groups/173311386703334/permalink/179453469422459/)|[Visual Spec](https://hexschool.github.io/THE_F2E_Design/todolist/)|
+  ---|---|---
 
 
 * **Week 2:** Filter
