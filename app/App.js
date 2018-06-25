@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from 'react-router'
 import Todolist from 'app/containers/Todolist';
 import Filter from 'app/containers/Filter';
 import AdminOrder from 'app/containers/AdminOrder';
+import ProductGallery from 'app/containers/ProductGallery';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
       <Route path="/todolist" component={Todolist} />
       <Route path="/filter" component={Filter} />
       <Route path="/admin-order" component={AdminOrder} />
+      <Route path="/product-gallery" component={ProductGallery} />
     </Switch>
   </div>
 );
