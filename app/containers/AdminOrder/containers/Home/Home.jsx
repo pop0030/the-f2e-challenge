@@ -9,7 +9,7 @@ import TransactionSite from './TransactionSite';
 
 class HOME extends React.Component {
   render() {
-    const { state, action } = this.props;
+    const { state } = this.props;
 
     const revenueTotalCount = _get(state, 'data.revenue.total', 0);
     const costTotalCount = _get(state, 'data.cost.total', 0);
